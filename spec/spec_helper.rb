@@ -20,7 +20,6 @@ end
 
 class MiniTest::Spec
   include ActiveSupport::Testing::SetupAndTeardown
-  include TestDataHelper
 
   alias :method_name :__name__ if defined? :__name__
 end
@@ -43,7 +42,7 @@ MiniTest::Spec.register_spec_type( /Controller$/, ControllerSpec )
 class AcceptanceSpec < MiniTest::Spec
   include Rails.application.routes.url_helpers
   include Capybara::DSL
-  include CommonActions
+  #include CommonActions
 
   before do
     @routes = Rails.application.routes
