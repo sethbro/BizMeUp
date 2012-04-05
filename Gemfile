@@ -8,6 +8,8 @@ gem 'httparty'
 gem 'haml-rails'
 gem 'jbuilder'
 
+gem 'awesome_print'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'bourbon'
