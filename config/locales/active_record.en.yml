@@ -1,0 +1,16 @@
+en:
+  errors:
+    messages:
+      blank:        This field is required
+      too_short:    %{attribute} is the wrong length
+      too_long:     %{attribute} must be %{count} characters
+      wrong_length: %{attribute} must be %{count} characters
+      taken:        Sorry­%{attribute} "%{value}" is already taken
+      invalid:      Invalid format for %{attribute}
+      inclusion:    %{attribute} is not an acceptable value
+      exclusion:    %{attribute} is not an acceptable value
+      not_a_number: %{attribute} must be a number
+      less_than:    %{attribute} must be less than %{count}
+      greater_than: %{attribute} must be greater than %{count}
+      less_than_or_equal_to: %{attribute} must be at most %{count}
+      greater_than_or_equal_to: %{attribute} must be at least %{count}
