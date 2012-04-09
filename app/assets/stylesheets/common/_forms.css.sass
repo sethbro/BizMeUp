@@ -1,0 +1,147 @@
+=input_gradient
+  $input_gradient: ($gold_2, $gold_1)
+  //+background-image( linear-gradient( $input_gradient ) )
+
+.input_gradient
+  +input_gradient
+
+
+=input_box_styles
+  $padding-input-top: 7px
+  $padding-input-bottom: 6px
+  $padding-input-sides: 6px
+
+  padding: $padding-input-top $padding-input-sides $padding-input-bottom
+  border: 1px solid $input_grey
+  //+border-radius( 2px )
+  //+box-shadow( $grey_input_shadow 2px 1px 5px inset )
+
+.input_box_styles
+  +input_box_styles
+
+
+=select_element
+  @extend .input_gradient
+  //+box-shadow( $white 1px 1px 1px inset )
+  border: 1px solid $input_grey
+  //+border-radius( 2px )
+
+
+form, legend
+  display: block
+
+legend
+  margin-bottom: $vspace_m
+  padding-bottom: $vspace_s
+  border-bottom: 1px solid $grey_5
+
+div.input
+  margin-bottom: $vspace_m
+
+  abbr
+    display: none
+
+  .hint
+    display: block
+    margin-top: .2em
+    text-align: right
+    font: italic 12px/1.1 $stack_sans
+    color: $grey_2
+
+.fieldspan
+  .input
+    margin-right: 20px
+    float: left
+
+  .input.select
+    width: 160px
+
+input, textarea, select, option
+  font: 16px/1.2 $stack_forms
+  letter-spacing: 0.02em
+  color: $grey_primary
+
+input, textarea
+  &:-moz-placeholder
+    font-size: 14px
+    color: $bone
+  &:-webkit-input-placeholder
+    font-size: 16px
+    color: $bone
+
+
+.login_status
+  input
+    font: 12px/1.2 $stack_forms
+
+label
+  margin-bottom: .2em
+  display: block
+  font: bold 12px/1.1 $stack_forms
+
+
+/* TEXT FIELDS
+input
+  display: block
+  margin-bottom: 0
+
+  &[type="text"], &[type="tel"], &[type="email"], &[type="password"]
+    +colwidth( 3 )
+    @extend .input_box_styles
+
+  &:focus
+    border: 1px solid $slate
+    //+box-shadow( $slate 0 0 1px 1px )
+
+input.short
+  //+colwidth( 2 )
+
+input.four
+  //+colwidth( 4 )
+
+input.string, textarea
+  @extend .input_box_styles
+
+textarea
+  +colwidth( 4, 14px )
+  height: 120px
+
+
+/* CHECK BOXES
+
+/* RADIO ELEMENTS
+div.input.radio_buttons
+  input, label
+    display: inline
+    vertical-align: baseline
+
+  label
+    margin-right: 20px
+
+  label.radio_buttons
+    display: block
+
+  input[type="radio"]
+    margin: 0 4px 1px 1px
+  label
+
+
+/* SELECT ELEMENTS
+select, option
+  padding-top: 3px
+  font-size: 13px
+
+select
+  width: $w_col * 2.8
+  margin-left: 2px
+  vertical-align: middle
+
+  option
+    //padding: 0.2em 24px 0.2em 4px
+    &:first-child
+      padding-top: 0
+    &:hover
+      background-color: $light_blue
+
+select.short
+  +colwidth( 2 )

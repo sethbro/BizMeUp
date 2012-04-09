@@ -1,0 +1,107 @@
+@charset "utf-8"
+
+// BOX SHADOW params
+// +box-shadow( $color, $hoff, $voff, $blur, $spread, $inset )
+
+$btn_drop_shadow: ( hsla(0,0,0,0.6) 0 1px 1px 0 )
+$btn_inner_shadow: ( hsla(0, 0, 100, 0.25) 0 1px 0 inset )
+
+// Button Gradients
+$grad_slate:( hsla(191,21,63,1), hsla(194,22,42,1) )
+$grad_slate_hover:( hsla(191,21,55,1), hsla(191,21,45,1) )
+$grad_slate_active:( hsla(191,21,45,1), hsla(191,21,55,1) )
+
+$grad_btn: ( hsla(0,0,0,0), hsla(0,0,0,0.25) )
+$grad_btn_hov: ( hsla(0,0,100,0.1), hsla(0,0,100,0) )
+$grad_btn_act: ( hsla(0,0,0,0.2), hsla(0,0,0,0.08) )
+
+
+=button( $color: $slate )
+  margin: 0 20px 0 0
+  padding: 0.5em 0.8em 0.7em
+  border: 1px solid $slate_stroke
+  //+border-radius( 3px )
+  background-color: $color
+  //+background-image( linear-gradient( $grad_slate ))
+  //+box-shadow(( hsla(0, 0, 0, 0) 0 1px 2px ), ( hsla(0, 0, 100, 0.4) 0 1px 0px inset ))
+  cursor: pointer
+
+  text-align: center
+  +subheading( 16 )
+  letter-spacing: 0.025em
+  text-decoration: none
+  color: $white
+  //+single-text-shadow( $slate_shadow, 0px, 1px, 2px)
+
+  &:hover
+    //+background-image( linear-gradient( $grad_slate_hover ))
+
+  &:active
+    //+background-image( linear-gradient( $grad_slate_active ))
+    //+box-shadow(( hsla(0, 0, 0, 0) 0 1px 2px ), ( hsla(0, 0, 0, 0.4) 0 1px 2px inset ))
+
+
+button, input[type="submit"], a.button
+  +button
+  color: $white
+
+
+button.submit
+
+
+button.cancel, a.button.cancel
+  background: $white
+  color: $grey_3
+  border: 1px solid $grey_5
+  //+single-text-shadow( none)
+
+  &:hover
+    border: 1px solid $grey_4
+    background-color: $white
+    color: $error_red
+    //+box-shadow(( hsla(0, 0, 0, 0) 0 1px 2px ), ( hsla(0, 0, 0, 0.2) 0 1px 2px inset ))
+
+
+/* Big ol' buttons */
+=call_to_action_button( $color: $yellow, $txt_color: $white )
+  //+button( $color )
+  padding: 0.25em 0.8em 0.25em
+  border-color: $grey_primary
+  +header_text
+  //+text-shadow( hsla(0, 0, 0, 0.9), 0, 1px, 1px )
+  color: $txt_color
+
+button.action, a.button.action
+  +call_to_action_button
+
+button.back_to, a.button.back_to
+  +button
+
+
+/* Removes some styles, allowing image to do its own thing */
+=image_button( $image_path )
+  padding: 0
+  border: 0
+  display: block
+  +spriteness( $image_path )
+  background-color: transparent
+  //+box-shadow( none )
+  cursor: pointer
+
+button.build_trunk, a.button.build_trunk
+  +image_button( '/assets/call_to_action_buttons/button_build_trunk.png' )
+  width: 304px
+  height: 63px
+  &:hover
+    background-position: 0px -63px
+  &:active
+    background-position: 0px -126px
+
+button.signup_button, a.button.signup_button
+  +image_button( '/assets/call_to_action_buttons/button_signup.png' )
+  width: 304px
+  height: 63px
+  &:hover
+    background-position: 0px -63px
+  &:active
+    background-position: 0px -126px

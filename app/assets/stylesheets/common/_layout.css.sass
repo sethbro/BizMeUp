@@ -1,0 +1,203 @@
+=slight_rounding
+  +border-radius( 3px )
+
+.slight_rounding
+  +slight_rounding
+
+
+=modularity
+  display: block
+  clear: both
+  +legacy-pie-clearfix
+
+.modularity
+  +modularity
+
+.full_page
+  +modularity
+  text-align: left
+
+.grid960
+  width: 940px
+  margin: 0 auto
+  padding: 0 $w_hgut
+  text-align: left
+
+.primary_module
+  +modularity
+  margin-bottom: $vspace_l
+
+
+.col1
+  +column(1)
+.col2
+  +column(2)
+.col3
+  +column(3)
+.col4
+  +column(4)
+.col5
+  +column(5)
+.col6
+  +column(6)
+.col7
+  +column(7)
+.col8
+  +column(8)
+.col9
+  +column(9)
+.col10
+  +column(10)
+.col11
+  +column(11)
+
+.last
+  +last
+
+
+/* Raw tags */
+h1, h2, h3, h4, h5, h6
+  margin-bottom: $vspace_s
+
+body
+  background-color: $whitish
+  text-align: center
+  +body_copy
+
+p
+  margin-bottom: 1.6em
+
+p.margin0, p:empty
+  margin-bottom: 0
+
+.bullets
+  margin: 0 0 2em 8px
+  padding-left: 16px
+  list-style-type: disc
+  list-style-position: outside
+  line-height: 1.2
+
+  li
+    margin-bottom: 0.5em
+
+iframe
+  border: 0 !important
+
+
+/* Primary layout elements */
+#page
+  position: relative
+
+#layout
+  @extend .grid960
+
+#header, #page_content, #footer
+  @extend .full_page
+
+#page_content
+  min-height: 500px
+  padding: $vspace_l 0
+  margin-bottom: 2em
+  //+grid-background( 12, 60, 24 )
+  //background-image: url( common/bg_grid.png )
+  text-align: left
+
+#stretch_header, #stretch_footer, #hero
+  width: 100%
+  .content
+    @extend .grid960
+    padding: 20px 0 10px
+    +legacy-pie-clearfix
+
+#stretch_header, #stretch_footer
+  background: $grey_primary url('/assets/common/tile_noise_grey.jpg')
+
+  a
+    font-weight: normal
+
+#stretch_header
+
+  #masthead
+    display: block
+    float: left
+
+  .login_status
+    margin-top: 8px
+    float: right
+    *width: 500px 
+    *text-align: right
+
+    a
+      color: $white
+      &:hover
+        text-decoration: underline
+
+      &[href="/logout"]
+        float: right
+        font-size: 11px
+        padding-top: 4px
+
+    form, .greeting
+      padding: 8px
+      //+legacy-pie-clearfix
+      +border-radius( 5px )
+      background: $black
+      color: $white
+
+      a
+        color: $link_color
+
+    .input
+      @extend .col2
+      +colwidth( 2.4 )
+      margin-bottom: 0
+      float: left
+      vertical-align: middle
+      +legacy-pie-clearfix
+      font-size: 12px
+
+      label
+        display: none
+
+      input
+        width: inherit
+        height: 16px
+        padding: 3px 5px
+
+    button
+      @extend .last
+      vertical-align: bottom
+      padding: 3px 8px 5px
+      float: right
+      font-size: 12px
+      font-weight: normal
+
+
+#page_content
+
+#stretch_footer
+  border-top: 8px solid $yellow
+
+/* Sticky Footer */
+*
+  margin: 0
+
+html, body
+  height: 100%
+
+.wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -190px
+
+footer, .push
+  height: 190px
+  clear: both
+  position: relative
+
+.push
+  z-index: 9000
+
+footer
+  z-index: 9999

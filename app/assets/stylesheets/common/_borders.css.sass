@@ -1,0 +1,17 @@
+$rule_thin: 1px solid
+$rule_thin_bone: $rule_thin $bone
+$border_thin_bone: $rule_thin $bone
+
+=under_rule( $color:$grey_5, $width:1px, $style:solid )
+  padding-bottom: $vspace_m
+  border-bottom: $width $style $color
+
+.under_rule
+  +under_rule
+
+=over_rule( $color:$grey_5, $width:1px, $style:solid )
+  padding-top: $vspace_m
+  border-top: $width $style $color
+
+.over_rule
+  +over_rule

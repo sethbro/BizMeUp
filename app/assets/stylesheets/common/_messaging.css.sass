@@ -1,0 +1,35 @@
+= messaging
+  display: block
+  margin-bottom: 15px
+  padding: 12px
+  border: 1px solid $grey_2
+  +border-radius( 3px )
+  background-color: $grey_6
+  font: 14px/1.4 $stack_sans
+  color: $grey_primary
+
+  ul
+    list-style: disc inside
+    list-style-type: none
+
+  b
+    +subheading
+
+.messaging
+  +messaging
+
+.error_messaging, .success_messaging
+  @extend .messaging
+  +messaging
+
+.error_messaging
+  border-color: $error_red
+  background: $error_bg
+  color: $error_red
+
+  li
+    list-style: none
+
+.success_messaging
+  background-color: #89d4a1
+  border-color: $success
