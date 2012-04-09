@@ -1,0 +1,7 @@
+%h1
+  = @copy[:h1]
+%div 
+  = @copy[:lead]
+
+%ul.places
+  = render partial: 'place_item', collection: @nearby_places
