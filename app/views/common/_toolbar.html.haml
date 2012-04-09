@@ -1,0 +1,6 @@
+.toolbar
+  - unless params[:controller] == 'home'
+    %a.back
+      = @copy[:back]
+  %h1
+    = @page[:page_title]
