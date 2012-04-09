@@ -29,9 +29,9 @@ describe GooglePlaces::Client do
 
     it 'makes a post request with body arg' do
       skip 'No post methods yet'
-      #GooglePlaces::Client.expects(:post).with(details_url, body: details_params)
+      GooglePlaces::Client.expects(:post).with(details_url, body: details_params)
 
-      #GooglePlaces::Client.details(place_ref)
+      GooglePlaces::Client.details(place_ref)
     end
   end
 

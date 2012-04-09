@@ -1,12 +1,10 @@
 require 'httparty'
 
 class GooglePlaces::Client
-  include Singleton
   include HTTParty
 
-  # TODO: Move to env vars
   URL = 'https://maps.googleapis.com/maps/api/place'
-  KEY = 'AIzaSyBY6gNvmizZkYxOSWhybpv4ja4voo9NNIA'
+  KEY = ENV['GOOGLE_PLACES_API_KEY'] || 'AIzaSyBY6gNvmizZkYxOSWhybpv4ja4voo9NNIA'
   BAD_RESPONSES = %w(REQUEST_DENIED UNKNOWN_ERROR)
 
   @format = :json
@@ -19,20 +17,19 @@ class GooglePlaces::Client
 
 
   class << self
-
     attr_accessor :format, :sensor, :defaults
 
     def places_url(action)
       [ URL, action.to_s, @format.to_s ].join '/'
     end
 
-    def search( name, latlng, parameters={} )
-      required = { name: name, location: latlng }
+    def search( latlng, parameters={} )
+      required = { location: latlng }
       params = @defaults.merge( parameters ).merge( required )
 
-      Rails.logger.info "Searching for Google Place w/name #{name}, latlng #{latlng}"
+      Rails.logger.info "Searching for Google Place in latlng #{latlng}"
 
-      response = request( places_url( 'search' ), params )
+      response = api_call( places_url( 'search' ), params )
     end
 
     def get_place( ref )
@@ -46,7 +43,7 @@ class GooglePlaces::Client
       required = { reference: ref }
       params = @defaults.merge( parameters ).merge( required )
 
-      response = request(places_url(:details), params)
+      response = api_call(places_url(:details), params)
     end
 
     def best_guess( places, info )
@@ -66,7 +63,7 @@ class GooglePlaces::Client
 
   class << self
 
-    def request(url, params, verb = :get)
+    def api_call(url, params, verb = :get)
       begin
         if verb == :get
           response = get(url, query: params)
@@ -102,7 +99,6 @@ class GooglePlaces::Client
     def coords_match?(coord1, coord2, to_nth=6)
       coord1.to_f.round(to_nth) == coord2.to_f.round(to_nth)
     end
-
   end
 
 end

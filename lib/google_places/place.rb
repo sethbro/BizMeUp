@@ -32,7 +32,7 @@ class GooglePlaces::Place
   end
 
   def map_address_components( address_components )
-    mappable_attrs = Place.attr_map.keys.map(&:to_s)
+    mappable_attrs = GooglePlaces::Place.attr_map.keys.map(&:to_s)
 
     address_components.each do |component_hash|
       name = component_hash['types'][0]
