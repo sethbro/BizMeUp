@@ -1,0 +1,8 @@
+-#= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js'
+= javascript_include_tag 'application', debug: Rails.env.development?
+
+-# Ruby vars that are page-specific are passed into Javascript here.
+- unless ! @page[:js_vars] || @page[:js_vars].empty?
+  %script
+    - @page[:js_vars].each do |key,val|
+      != "BMU.#{key} = #{val.to_json};\n"
