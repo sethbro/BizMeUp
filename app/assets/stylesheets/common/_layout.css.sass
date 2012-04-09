@@ -1,11 +1,7 @@
 /* Raw tags */
-h1, h2, h3, h4, h5, h6
-  margin-bottom: $vspace_s
-
 body
-  background-color: $whitish
-  text-align: center
-  +body_copy
+  margin: 0
+  padding: 0
 
 p
   margin-bottom: 1.6em
@@ -13,25 +9,27 @@ p
 p.margin0, p:empty
   margin-bottom: 0
 
-ul
-  margin: 0
-  padding: 0
-
-li
-  display: block
-  margin: 0
-  padding: 0
-  list-style: none
-
-.bullets
-  margin: 0 0 2em 8px
-  padding-left: 16px
-  list-style-type: disc
-  list-style-position: outside
-  line-height: 1.2
-
-  li
-    margin-bottom: 0.5em
+img
+  max-width: 100%
+//ul
+//  margin: 0
+//  padding: 0
+//
+//li
+//  display: block
+//  margin: 0
+//  padding: 0
+//  list-style: none
+//
+//.bullets
+//  margin: 0 0 2em 8px
+//  padding-left: 16px
+//  list-style-type: disc
+//  list-style-position: outside
+//  line-height: 1.2
+//
+//  li
+//    margin-bottom: 0.5em
 
 
 /* Primary layout elements */
@@ -43,57 +41,5 @@ li
 #header, #page_content, #footer
 
 #page_content
-  min-height: 500px
-  padding: $vspace_l 0
-  margin-bottom: 2em
-  //+grid-background( 12, 60, 24 )
-  //background-image: url( common/bg_grid.png )
   text-align: left
 
-//#stretch_header, #stretch_footer, #hero
-//  width: 100%
-//  .content
-//    @extend .grid960
-//    padding: 20px 0 10px
-//    +legacy-pie-clearfix
-//
-//#stretch_header, #stretch_footer
-//  background: $grey_primary url('/assets/common/tile_noise_grey.jpg')
-//
-//  a
-//    font-weight: normal
-//
-//#stretch_header
-//
-//  #masthead
-//    display: block
-//    float: left
-//
-//#page_content
-//
-//#stretch_footer
-//  border-top: 8px solid $yellow
-
-///* Sticky Footer */
-//*
-//  margin: 0
-//
-//html, body
-//  height: 100%
-//
-//.wrapper
-//  min-height: 100%
-//  height: auto !important
-//  height: 100%
-//  margin: 0 auto -190px
-//
-//footer, .push
-//  height: 190px
-//  clear: both
-//  position: relative
-//
-//.push
-//  z-index: 9000
-//
-//footer
-//  z-index: 9999

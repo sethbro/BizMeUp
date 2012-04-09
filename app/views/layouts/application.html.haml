@@ -3,30 +3,20 @@
 
   %head
     %title
-      -#= page_title @page[:title]
-    -#= render 'common/meta'
+      = @page[:page_title] || 'Home'
+    = render 'common/meta'
 
     %link{ rel: "shortcut icon", href: "/favicon.ico" }
+
     = stylesheet_link_tag 'application', media: 'screen'
-    /[if IE]
+    -#/[if IE]
       = stylesheet_link_tag 'ie', media: 'screen'
     -#= stylesheet_link_tag 'print', media: 'print'
+
+    = render 'common/javascript'
     = csrf_meta_tag
 
   %body{ class: @page[:layout_classes].join(' ') }
-    -#backdrop
-    #page
-
-      - unless suppressed?( 'stretch_header' )
-        #stretch_header
-          .content
-            -#= render 'common/header'
-
-      #layout
-        #page_content
-          = yield
-
-        #footer
-          -#= render 'common/footer'
-
-  = render 'common/javascript'
+    #home
+      = render 'common/toolbar'
+      = yield
