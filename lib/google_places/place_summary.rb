@@ -3,6 +3,7 @@ class GooglePlaces::PlaceSummary
   attr_reader :id, :ref, :name, :address, :latlng, :icon, :rating
 
   def initialize( data )
+    data = HashWithIndifferentAccess.new(data)
     @id       = data['id']
     @name     = data['name']
     @ref      = data['reference']

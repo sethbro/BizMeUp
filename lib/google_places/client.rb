@@ -56,6 +56,40 @@ class GooglePlaces::Client
       places.first
     end
 
+    # No internet access requires other solutions
+    def shill_data(num=8)
+      (1..num).map do |i|
+        data_hash = {id: i, reference: "#{i}XYZ", name: company_name, vicinity: rand_address, rating: rand(4) + 1, icon: rand_icon, 'geometry' => { 'location' => rand_latlng }}
+      end
+    end
+
+    def company_name
+      names = %w(Totally Incredible Salacious Domineering Glinting Terrarium Gypsum)
+      names_2 = %w(Whatever Gerbils Gravitas Itineraries Believers Ignorance)
+      suffixes = %w(Inc. LLC Co)
+      co = names[rand(names.length)]
+      co << ' ' << get_rand(names_2)
+      co << ' ' << get_rand(suffixes) if rand(1) == 0
+    end
+
+    def rand_address
+      streets = %w(Main Michigan Caribou Pathology Direct Juniper)
+      road_types = %w(St Blvd Ave)
+      num = (rand(9998) + 1).to_s
+      '%s %s %s' % [num, get_rand(streets), get_rand(road_types)]
+    end
+
+    def rand_icon
+      '/assets/icon_rest.png'
+    end
+
+    def rand_latlng
+      '-87.24234,32.20934'
+    end
+
+    def get_rand(arr)
+      arr[rand(arr.length)]
+    end
   end
 
 
