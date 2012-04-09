@@ -1,6 +1,7 @@
 %li.place.item{ id: "place_#{place_item_counter+1}" }
   %h3
     = place_item.name
+
   .info
     .icon
       = image_tag place_item.icon
@@ -9,3 +10,7 @@
       = place_item.address
     .rating
       = place_item.rating
+
+  .actions
+    %button.check_in
+      = @copy[:check_in]
