@@ -4,9 +4,10 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rubygems'
 gem 'minitest'
 require 'minitest/autorun'
+require 'minitest/context'
+require 'miniskirt'
 require 'action_controller/test_case'
 
-require 'miniskirt'
 require 'capybara/rails'
 require 'awesome_print'
 require 'mocha'
