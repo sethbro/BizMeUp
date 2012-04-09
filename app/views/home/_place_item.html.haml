@@ -1,16 +1,7 @@
-%li.place.item{ id: "place_#{place_item_counter+1}" }
-  %h3
-    = place_item.name
-
-  .info
-    .icon
-      = image_tag place_item.icon
-    .map
-    %address
-      = place_item.address
-    .rating
-      = place_item.rating
-
-  .actions
-    %button.check_in
-      = @copy[:check_in]
+%li.arrow.place{ id: "place_#{place_item_counter+1}" }
+  %img.icon{ src: place_item.icon }
+  = link_to place_item.name, '#home'
+  -#.address
+    = link_to place_item.address, '#home'
+  -#.rating
+    = place_item.rating

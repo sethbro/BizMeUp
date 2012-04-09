@@ -1,7 +1,6 @@
-%h1
-  = @copy[:h1]
-%div 
-  = @copy[:lead]
+#home
+  .info
+    = @copy[:lead]
 
-%ul.places
-  = render partial: 'place_item', collection: @nearby_places
+  %ul.places.rounded
+    = render partial: 'place_item', collection: @nearby_places
