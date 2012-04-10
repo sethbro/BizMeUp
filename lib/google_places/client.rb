@@ -4,7 +4,7 @@ class GooglePlaces::Client
   include HTTParty
 
   URL = 'https://maps.googleapis.com/maps/api/place'
-  KEY = ENV['GOOGLE_PLACES_API_KEY'] || 'AIzaSyBY6gNvmizZkYxOSWhybpv4ja4voo9NNIA'
+  KEY = ENV['GOOGLE_PLACES_API_KEY']
   BAD_RESPONSES = %w(REQUEST_DENIED UNKNOWN_ERROR)
 
   @format = :json
