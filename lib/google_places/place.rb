@@ -9,7 +9,6 @@ class GooglePlaces::Place
     @phone = attrs['formatted_phone_number']
     @address = attrs['vicinity']
 
-    map_address_components( attrs['address_components'] )
     set_lat_lng( attrs['geometry']['location'] )
     set_addtl_info( attrs )
   end
