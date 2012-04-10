@@ -7,7 +7,7 @@ class GooglePlacesController < ApplicationController
 
   def place
     begin
-      @place = GooglePlaces::Client.get_place(params['ref'])
+      @place = GooglePlaces::Client.get_place(params[:ref])
       @page[:title] = @place.name
 
       render
