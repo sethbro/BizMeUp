@@ -15,7 +15,7 @@ class GooglePlaceDetails
       data: {ref: ref}
       dataType: 'html'
       complete: _.bind((xhr, status) ->
-        if xhr.status == 200 || xhr.status == 304
+        if xhr && (xhr.status == 200 || xhr.status == 304)
           @callSuccess(xhr, status)
         else
           @callError(xhr)
