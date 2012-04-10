@@ -1,0 +1,5 @@
+en:
+  actioncontroller:
+    google_places:
+      h1_error: Error retrieving place
+      place_error: There was a problem retrieving details for this location.

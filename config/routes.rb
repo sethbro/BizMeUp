@@ -1,6 +1,8 @@
 BizMeUp::Application.routes.draw do
   root to: 'home#index'
 
+  match '/google_places/place' => 'google_places#place'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
