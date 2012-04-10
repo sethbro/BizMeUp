@@ -1,0 +1,8 @@
+= render 'common/toolbar'
+
+.place_details
+  - if ! @errors
+    = @place.inspect
+  - else
+    .error_message{ 'data-test_id' => 'error_messaging' }
+      = @errors
