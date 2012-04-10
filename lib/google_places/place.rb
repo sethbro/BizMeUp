@@ -2,12 +2,12 @@ class GooglePlaces::Place
 
   attr_accessor :address_1, :address_2, :state, :city, :zip, :country,
     :street_number, :name, :lat, :lng, :latlng, :address, :phone,
-    :url, :types, :icon, :vicinity, :rating, :reference
+    :url, :types, :icon, :vicinity, :rating, :reference, :website
 
   def initialize( attrs )
     @name = attrs['name']
     @phone = attrs['formatted_phone_number']
-    @address = attrs['formatted_address']
+    @address = attrs['vicinity']
 
     map_address_components( attrs['address_components'] )
     set_lat_lng( attrs['geometry']['location'] )
@@ -52,8 +52,8 @@ class GooglePlaces::Place
   end
 
   def set_addtl_info( attrs )
-    %w(url reference vicinity rating types icon).each do |attr|
-      self.send( "#{attr}=", attrs[attr] )
+    %w(url reference website vicinity rating types icon).each do |attr|
+      self.send( "#{attr}=", attrs[attr] ) if attrs[attr]
     end
   end
 
