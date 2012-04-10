@@ -1,6 +1,8 @@
-%li.arrow.place{ id: "place_#{place_item_counter+1}" }
+%li.arrow.place{ id: "place_#{place_item_counter+1}",
+  data: {ref: place_item.ref}}
+
   %img.icon{ src: place_item.icon }
-  = link_to place_item.name, '#home'
+  = link_to place_item.name, '#place_details'
   -#.address
     = link_to place_item.address, '#home'
   -#.rating

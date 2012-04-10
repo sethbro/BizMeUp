@@ -1,6 +1,10 @@
 #home
+  = render 'common/toolbar'
+
   .info
     = @copy[:lead]
 
   %ul.places.rounded
     = render partial: 'place_item', collection: @nearby_places
+
+#place_details

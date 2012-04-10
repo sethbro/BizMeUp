@@ -17,6 +17,4 @@
     = csrf_meta_tag
 
   %body{ class: @page[:layout_classes].join(' ') }
-    #home
-      = render 'common/toolbar'
-      = yield
+    = yield
