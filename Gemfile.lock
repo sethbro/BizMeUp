@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:trunkclub/minitest-context.git
+  revision: 19817ea283a30ed7de41695e46238abdb598dcf9
+  specs:
+    minitest-context (0.4.0)
+      minitest (~> 2.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,8 +113,6 @@ GEM
     miniskirt (1.1.1)
       activesupport (>= 2.2)
     minitest (2.12.0)
-    minitest-context (0.4.0)
-      minitest (~> 2.5)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.2.0)
@@ -215,7 +220,7 @@ DEPENDENCIES
   jbuilder
   miniskirt
   minitest (>= 2.1.0)
-  minitest-context
+  minitest-context!
   mocha
   pg
   pry

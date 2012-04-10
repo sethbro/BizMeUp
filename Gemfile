@@ -31,7 +31,7 @@ group :development, :test do
   gem 'turn', require: false
 
   gem 'minitest', '>= 2.1.0'
-  gem 'minitest-context'
+  gem 'minitest-context', git: 'git@github.com:trunkclub/minitest-context.git'
   gem 'miniskirt', require: false
 
   gem 'mocha', require: false
