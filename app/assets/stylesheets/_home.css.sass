@@ -16,3 +16,33 @@
     a
       margin-left: 4px
       +inline-block
+
+#place_details
+  .content
+    +clearfix
+
+  h2
+    margin: 0 0 0.4em 0
+    padding-bottom: 0.2em
+    border-bottom: 1px dotted $grey_2
+
+  .map
+    margin: 1em
+    border: 1px solid $grey_2
+    float: left
+    position: relative
+    z-index: 1000
+
+  .info
+    font-size: 1em
+    line-height: 1.5
+    text-align: left
+
+  .info_2
+    min-height: 30px
+    position: relative
+    +clearfix
+
+  .rating
+    img
+      opacity: 0.7
