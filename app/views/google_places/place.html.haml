@@ -13,7 +13,7 @@
       %br/
       = @place.phone
       %br/
-      = link_to @place.website if @place.website
+      = link_to(@place.website, @place.website, target: '_blank') if @place.website
 
   .info.info_2
     %button.button{disabled: true}
