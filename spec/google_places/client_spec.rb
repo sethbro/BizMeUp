@@ -12,11 +12,6 @@ describe GooglePlaces::Client do
 
 
   describe 'network' do
-    before do
-      #GooglePlaces::Client.stubs :get
-      #GooglePlaces::Client.stubs :post
-    end
-
     it 'derives url from action and format' do
       GooglePlaces::Client.places_url('details').must_equal details_url
     end
