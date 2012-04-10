@@ -2,6 +2,5 @@ Biz Me Up is a mobile exercise built using [jQTouch](http://jqtouch.com) and the
 
 It pulls a prioritized list of restaurants & bars in Chicago & allows you to view their contact details.
 
-*Known Issues*
-
+**Known Issues**
 * Back button functionality
